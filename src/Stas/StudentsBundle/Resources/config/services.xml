@@ -5,12 +5,22 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="stas.students.service.student.class">Stas\StudentsBundle\Service\StudentService</parameter>
+        <parameter key="stas_students.service.student.class">Stas\StudentsBundle\Service\StudentService</parameter>
+        <parameter key="stas_students.command.path_generate.class">Stas\StudentsBundle\Command\PathGenerateCommand</parameter>
     </parameters>
 
     <services>
-        <service id="stas.students.service.student" class="%stas.students.service.student.class%">
+        <service id="stas_students.service.student" class="%stas_students.service.student.class%">
             <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+
+        <service id="stas_students.command.path_generate" class="%stas_students.command.path_generate.class%">
+            <call method="setManager">
+                <argument type="service" id="doctrine.orm.default_entity_manager" />
+            </call>
+            <call method="setStudentService">
+                <argument type="service" id="stas_students.service.student" />
+            </call>
         </service>
     </services>
 

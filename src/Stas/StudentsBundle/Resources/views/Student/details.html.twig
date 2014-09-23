@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Student {{ student.name }}{% endblock %}
+
+{% block body %}
+    <h1>{{ student.name }}</h1>
+    <p>Date: {{ "now"|date('Y-m-d H:i:s') }}</p>
+    <p>{{ student.description }}</p>
+{% endblock %}

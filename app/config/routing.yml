@@ -1,4 +1,4 @@
 stas_students:
-    resource: "@StasStudentsBundle/Resources/config/routing.xml"
+    resource: "@StasStudentsBundle/Resources/config/routing.yml"
     prefix:   /
 

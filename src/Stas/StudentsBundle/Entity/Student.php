@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping\Index;
  * @ORM\Table("student", indexes={
  *  @Index(name="student_path", columns={"path"})
  * })
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Stas\StudentsBundle\Entity\StudentRepository")
  */
 class Student
 {

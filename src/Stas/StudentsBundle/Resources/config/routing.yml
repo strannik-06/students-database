@@ -1,0 +1,3 @@
+stas_students_student_details:
+    path:     /students/detail/{path}
+    defaults: { _controller: StasStudentsBundle:Student:details }
