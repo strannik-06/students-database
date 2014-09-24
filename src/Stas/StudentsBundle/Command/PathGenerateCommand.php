@@ -65,12 +65,10 @@ class PathGenerateCommand extends Command
                     $success = 0;
                     foreach ($items as $item) {
                         $path = $this->studentService->generatePath($item->getName(), $this->paths);
-                        $this->paths[] = $path;
                         $item->setPath($path);
-                        $this->manager->persist($item);
+                        $this->paths[$path] = true;
                         $success++;
                     }
-                    $this->writeStat($output, "$success items were processed successfully");
                 } catch (\Exception $e) {
                     $this->writeStat($output, 'Error: ' . $countItems . ' items was not processed');
                 }

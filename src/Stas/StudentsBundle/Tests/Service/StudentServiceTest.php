@@ -114,12 +114,18 @@ class StudentServiceTest extends \PHPUnit_Framework_TestCase
             'already exists' => array(
                 'actual' => "James Black",
                 'expected' => 'james_black_1',
-                'existingPaths' => array('john_smith', 'james_black'),
+                'existingPaths' => array(
+                    'john_smith' => true,
+                    'james_black' => true,
+                ),
             ),
             'exists several' => array(
                 'actual' => "Peter Small",
                 'expected' => 'peter_small_2',
-                'existingPaths' => array('peter_small', 'peter_small_1'),
+                'existingPaths' => array(
+                    'peter_small' => true,
+                    'peter_small_1' => true,
+                ),
             ),
         );
     }

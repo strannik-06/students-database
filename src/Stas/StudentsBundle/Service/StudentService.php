@@ -48,7 +48,7 @@ class StudentService
         $path = $this->encode($name);
         $i = 1;
         $newPath = $path;
-        while (in_array($newPath, $existingPaths)) {
+        while (isset($existingPaths[$newPath])) {
             $newPath = $path . '_' . $i++;
         }
 

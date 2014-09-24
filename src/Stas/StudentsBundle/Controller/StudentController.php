@@ -11,7 +11,7 @@ use Stas\StudentsBundle\Entity\StudentRepository;
 class StudentController extends Controller
 {
     /**
-     * $param string $path
+     * @param string $path
      *
      * @return Response
      */
